@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html.dark {
+  background-color: #0A0A0F;
+  color: #E0E0E6;
+  color-scheme: dark;
+}
+
+html.light {
+  background-color: #F8FAFC;
+  color: #0F172A;
+  color-scheme: light;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+html.light ::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #1E1E24;
+  border-radius: 4px;
+  border: 1px solid #2A2A35;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+  border: 1px solid #E2E8F0;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #2A2A35;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Media Print Styles for Curriculum Printing */
+@media print {
+  /* Hide standard web page elements */
+  header, footer, nav, section, main, .no-print, button {
+    display: none !important;
+  }
+
+  /* Reset body and html */
+  body, html {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  /* Reset all layout wrappers to prevent scroll clipping */
+  #root, 
+  #root > div,
+  .min-h-screen {
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  /* Overlay configuration */
+  .cv-modal-overlay {
+    position: static !important;
+    display: block !important;
+    background: transparent !important;
+    padding: 0 !important;
+    backdrop-filter: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Container configuration */
+  .printable-cv-container {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: visible !important;
+  }
+
+  /* Content wrapper configuration */
+  .cv-content-container {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    overflow-y: visible !important;
+    padding: 0 !important;
+  }
+
+  /* Force print color styling */
+  .printable-cv-container * {
+    color: #0f172a !important;
+    background: transparent !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: none !important;
+  }
+
+  /* Hide scrollbars everywhere during printing */
+  ::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  * {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+}
+
