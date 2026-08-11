@@ -2,7 +2,7 @@ import { Project, SkillCategory, StatItem } from './types';
 
 export const HERO_DATA = {
   title: "Information Technology Student & Web Developer",
-  description: "Estudiante de 6to semestre de Tecnologías de la Información en Línea en la UNEMI. Enfocado en desarrollo frontend, arquitectura de sistemas y resolución de problemas lógicos through clean code.",
+  description: "Estudiante de 7mo semestre de Tecnologías de la Información en Línea en la UNEMI. Enfocado en desarrollo frontend, arquitectura de sistemas y resolución de problemas lógicos through clean code.",
   githubUrl: "https://github.com/israelarias123/israelarias123",
   email: "gariase2@unemi.edu.ec",
   location: "Ecuador (UNEMI - Modalidad en Línea)",
