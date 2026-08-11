@@ -20,7 +20,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
               <span className="w-2 h-2 rounded-full bg-[#0088A3] dark:bg-[#00E5FF] animate-pulse"></span>
               <span className="text-xs font-medium text-slate-600 dark:text-[#A0A0B0] flex items-center gap-1.5">
                 <GraduationCap className="w-3.5 h-3.5 text-[#0088A3] dark:text-[#00E5FF]" />
-                UNEMI · 7to Semestre · TI en Línea
+                UNEMI · 7mo Semestre · TI en Línea
               </span>
             </div>
 
