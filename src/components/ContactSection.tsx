@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Mail, Github, GraduationCap, MapPin, Copy, Check, FileText } from 'lucide-react';
+import { Mail, Github, GraduationCap, MapPin, Copy, Check, FileText, MessageSquare } from 'lucide-react';
 import { HERO_DATA, ACADEMIC_INFO } from '../data';
+import { ContactForm } from './ContactForm';
 
 interface ContactSectionProps {
   onOpenCv: () => void;
@@ -18,16 +19,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenCv }) => {
   return (
     <section id="contact" className="py-16 md:py-24 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
+
           {/* Academic Context Card */}
           <div className="lg:col-span-7 bg-white dark:bg-[#141418] border border-slate-200 dark:border-[#2A2A35] rounded-xl p-6 sm:p-8 shadow-xs">
             <div className="flex items-center space-x-2 text-xs font-semibold text-[#0088A3] dark:text-[#00E5FF] uppercase tracking-wider mb-2">
               <GraduationCap className="w-4 h-4" />
               <span>Formación Académica</span>
             </div>
-            
+
             <h2 className="font-heading font-bold text-2xl text-slate-900 dark:text-white mb-4">
               Información Universitaria
             </h2>
@@ -68,7 +69,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenCv }) => {
                 <Mail className="w-4 h-4" />
                 <span>Contacto Directo</span>
               </div>
-              
+
               <h2 className="font-heading font-bold text-2xl text-slate-900 dark:text-white mb-4">
                 Canales de Comunicación
               </h2>
@@ -124,6 +125,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenCv }) => {
 
           </div>
 
+        </div>
+
+        {/* 👇 NUEVO: Formulario de contacto (ancho completo, debajo del grid) */}
+        <div className="mt-8 bg-white dark:bg-[#141418] border border-slate-200 dark:border-[#2A2A35] rounded-xl p-6 sm:p-8 shadow-xs">
+          <div className="flex items-center space-x-2 text-xs font-semibold text-[#0088A3] dark:text-[#00E5FF] uppercase tracking-wider mb-2">
+            <MessageSquare className="w-4 h-4" />
+            <span>Envíame un mensaje</span>
+          </div>
+
+          <h2 className="font-heading font-bold text-2xl text-slate-900 dark:text-white mb-2">
+            Formulario de Contacto
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-[#A0A0B0] mb-6">
+            Completa el formulario y me pondré en contacto contigo a la brevedad posible.
+          </p>
+
+          <ContactForm />
         </div>
 
       </div>
